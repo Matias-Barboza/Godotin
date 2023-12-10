@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://juego/tests/GuardarDatosTest.gd" type="Script" id=1]
+
+[node name="GuardarDatosTest" type="Node"]
+script = ExtResource( 1 )
+
+[node name="BotonGuardar" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = 107.0
+margin_right = 31.0
+margin_bottom = 127.0
+text = "Guardar"
+
+[node name="BotonCargar" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 72.0
+margin_top = 107.0
+margin_right = 123.0
+margin_bottom = 127.0
+text = "Cargar"
+
+[node name="BotonGuardarTRES" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = 136.0
+margin_right = 64.0
+margin_bottom = 156.0
+text = "Guardar TRES"
+
+[node name="BotonCargarTRES" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 73.0
+margin_top = 136.0
+margin_right = 157.0
+margin_bottom = 156.0
+text = "Cargar TRES"
+
+[node name="BotonBorrarTRES" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 166.0
+margin_top = 136.0
+margin_right = 178.0
+margin_bottom = 156.0
+text = "Borrar TRES"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -98.0
+margin_right = 90.0
+margin_bottom = -84.0
+text = "Hola mundo, mi nombre es:"
+
+[node name="TextoResultadoJSON" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 111.0
+margin_top = -47.0
+margin_right = 174.0
+margin_bottom = -33.0
+text = "Resultado"
+
+[node name="TextoResultadoTRES" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 112.0
+margin_top = -7.0
+margin_right = 175.0
+margin_bottom = 7.0
+text = "Resultado"
+
+[node name="NombreJSON" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -53.0
+margin_right = 100.0
+margin_bottom = -29.0
+
+[node name="NombreTRES" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -12.0
+margin_right = 100.0
+margin_bottom = 12.0
+
+[connection signal="pressed" from="BotonGuardar" to="." method="_on_BotonGuardar_pressed"]
+[connection signal="pressed" from="BotonCargar" to="." method="_on_BotonCargar_pressed"]
+[connection signal="pressed" from="BotonGuardarTRES" to="." method="_on_BotonGuardarTRES_pressed"]
+[connection signal="pressed" from="BotonCargarTRES" to="." method="_on_BotonCargarTRES_pressed"]
+[connection signal="pressed" from="BotonBorrarTRES" to="." method="_on_BotonBorrarTRES_pressed"]

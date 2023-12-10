@@ -1,0 +1,168 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://recursos/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/fonts/Kenney Rocket Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://juego/menus/MenuInicio.gd" type="Script" id=3]
+[ext_resource path="res://recursos/audio/sfx/select_2.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.266667, 0.352941, 0.792157, 1 )
+border_width_bottom = 6
+border_color = Color( 0.109804, 0.164706, 0.439216, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.188235, 0.290196, 0.811765, 1 )
+border_width_left = 1
+border_width_top = 6
+border_width_right = 1
+border_color = Color( 0.109804, 0.164706, 0.439216, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.188235, 0.290196, 0.811765, 1 )
+border_width_bottom = 6
+border_color = Color( 0.109804, 0.164706, 0.439216, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.792157, 0.266667, 0.266667, 1 )
+border_width_bottom = 6
+border_color = Color( 0.439216, 0.109804, 0.109804, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.811765, 0.188235, 0.188235, 1 )
+border_width_left = 1
+border_width_top = 6
+border_width_right = 1
+border_color = Color( 0.439216, 0.109804, 0.109804, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.811765, 0.188235, 0.188235, 1 )
+border_width_bottom = 6
+border_color = Color( 0.439216, 0.109804, 0.109804, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="MenuInicio" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+nivel_inicial = "res://juego/niveles/NivelTest.tscn"
+menu_ajustes = "res://juego/menus/MenuAjustes.tscn"
+pantalla_carga = "res://juego/interfaces/PantallaCarga.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.113725, 0.133333, 0.14902, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.5
+margin_top = -253.0
+margin_right = 97.5
+margin_bottom = -215.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "Godotin"
+
+[node name="ContenedorPrincipal" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.0
+margin_top = -138.0
+margin_right = 119.0
+margin_bottom = 138.0
+
+[node name="CargarButton" type="Button" parent="ContenedorPrincipal"]
+margin_right = 238.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 238, 64 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 6 )
+disabled = true
+text = "Cargar"
+
+[node name="NuevoButton" type="Button" parent="ContenedorPrincipal"]
+margin_top = 68.0
+margin_right = 238.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 238, 64 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
+text = "Nuevo"
+
+[node name="OpcionesButton" type="Button" parent="ContenedorPrincipal"]
+margin_top = 136.0
+margin_right = 238.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 238, 64 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 6 )
+text = "Opciones"
+
+[node name="HSeparator" type="HSeparator" parent="ContenedorPrincipal"]
+margin_top = 204.0
+margin_right = 238.0
+margin_bottom = 208.0
+
+[node name="SalirButton" type="Button" parent="ContenedorPrincipal"]
+margin_top = 212.0
+margin_right = 238.0
+margin_bottom = 276.0
+rect_min_size = Vector2( 238, 64 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
+text = "Salir"
+
+[node name="SFXboton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[connection signal="pressed" from="ContenedorPrincipal/NuevoButton" to="." method="_on_NuevoButton_pressed"]
+[connection signal="pressed" from="ContenedorPrincipal/OpcionesButton" to="." method="_on_OpcionesButton_pressed"]
+[connection signal="pressed" from="ContenedorPrincipal/SalirButton" to="." method="_on_SalirButton_pressed"]

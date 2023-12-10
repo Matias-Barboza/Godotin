@@ -19,14 +19,16 @@ var vector_snap : Vector3 = Vector3.DOWN
 var salto_interrumpido : bool = false
 var saltando : bool = false
 var cayendo : bool = false
+var disparando : bool = false
 
 
 onready var armadura : Spatial = $Armadura
 onready var brazo_camara : SpringArm = $BrazoCamara
 onready var arbol_animacion : ArbolDeAnimacionPlayer = $ArbolDeAnimacion
+onready var linterna : SpotLight = $Linterna
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	movimiento_horizontal()
 	
@@ -38,11 +40,28 @@ func _physics_process(delta: float) -> void:
 	
 	if direccion_vista_player.length() > 0:
 		armadura.rotation.y = direccion_vista_player.angle()
+	
+	if disparando:
+		linterna.rotation.y = armadura.rotation.y - 3.14159
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	brazo_camara.translation = translation
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("disparar"):
+		
+		arbol_animacion.set_mezcla_disparar(1)
+		disparando = true
+		linterna.light_energy = 15
+	elif event.is_action_released("disparar"):
+		
+		arbol_animacion.set_mezcla_disparar(0)
+		disparando = false
+		linterna.light_energy = 0
 
 
 func tomar_direccion() -> Vector3:
@@ -106,3 +125,9 @@ func movimiento_vertical() -> void:
 		for i in range(1, 11, 1):
 			
 			arbol_animacion.set_mezcla_saltar_caer(i * 0.1)
+
+
+func respawn() -> void:
+	
+	DatosJuego.restar_vidas()
+	get_tree().reload_current_scene()

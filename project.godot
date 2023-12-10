@@ -14,21 +14,54 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://juego/player/ArbolDeAnimacionPlayer.gd"
 }, {
+"base": "Resource",
+"class": "DatosAjustesGuardado",
+"language": "GDScript",
+"path": "res://juego/almacenamiento/DatosAjustesGuardado.gd"
+}, {
+"base": "Resource",
+"class": "DatosJuegoGuardado",
+"language": "GDScript",
+"path": "res://juego/almacenamiento/DatosJuegoGuardado.gd"
+}, {
 "base": "KinematicBody",
 "class": "Godotin",
 "language": "GDScript",
 "path": "res://juego/player/Godotin.gd"
+}, {
+"base": "Node",
+"class": "GuardarCargar",
+"language": "GDScript",
+"path": "res://juego/almacenamiento/GuardarCargar.gd"
+}, {
+"base": "Area",
+"class": "Moneda",
+"language": "GDScript",
+"path": "res://juego/items/MonedaDorada.gd"
 } ]
 _global_script_class_icons={
 "ArbolDeAnimacionPlayer": "",
-"Godotin": ""
+"DatosAjustesGuardado": "",
+"DatosJuegoGuardado": "",
+"Godotin": "",
+"GuardarCargar": "",
+"Moneda": ""
 }
 
 [application]
 
 config/name="Godotin"
-run/main_scene="res://juego/niveles/NivelTest.tscn"
+run/main_scene="res://juego/menus/MenuPresentacion.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Godotin"
 config/icon="res://icon.png"
+
+[autoload]
+
+Eventos="*res://autoload/Eventos.gd"
+DatosJuego="*res://autoload/DatosJuego.gd"
+DatosConfiguracion="*res://autoload/DatosConfiguracion.gd"
+CargaSegundoPlano="*res://autoload/CargaSegundoPlano.tscn"
 
 [display]
 
@@ -43,27 +76,32 @@ window/stretch/aspect="keep"
 
 saltar={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 mov_derecha={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 mov_izquierda={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 mov_adelante={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 mov_atras={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+disparar={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 
@@ -72,6 +110,7 @@ mov_atras={
 3d_physics/layer_1="Player"
 3d_physics/layer_2="Plataformas"
 3d_physics/layer_3="Mundo"
+3d_physics/layer_4="Danio"
 
 [physics]
 

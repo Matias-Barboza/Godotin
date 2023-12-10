@@ -30,3 +30,13 @@ func get_mezcla_saltar_caer() -> float:
 func set_mezcla_saltar_caer(valor : float) -> void:
 	
 	set("parameters/MezclaSaltarCaer/blend_amount", valor)
+
+
+func get_mezcla_disparar() -> float:
+	
+	return get("parameters/MezclaDisparar/blend_amount")
+
+
+func set_mezcla_disparar(valor : float) -> void:
+	
+	set("parameters/MezclaDisparar/blend_amount", valor)

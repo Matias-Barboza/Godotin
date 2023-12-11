@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://recursos/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://juego/menus/MenuGameOver.gd" type="Script" id=2]
+[ext_resource path="res://juego/menus/MenuWin.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-size = 60
+[sub_resource type="DynamicFont" id=7]
+size = 50
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -40,7 +40,7 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[node name="MenuGameOver" type="Control"]
+[node name="MenuWin" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -57,16 +57,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -210.5
-margin_top = -204.0
-margin_right = 210.5
-margin_bottom = -136.0
-custom_fonts/font = SubResource( 1 )
-text = "Game over :("
+margin_left = -455.0
+margin_top = -259.0
+margin_right = 455.0
+margin_bottom = -82.0
+custom_fonts/font = SubResource( 7 )
+text = "¡Ganaste!
+Todo gracias al
+protip de la pantalla de carga"
 align = 1
 valign = 1
 
-[node name="ReintentarNivelButton" type="Button" parent="."]
+[node name="SalirButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -79,6 +81,6 @@ custom_fonts/font = SubResource( 2 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
-text = "Reintentar nivel"
+text = "Salir"
 
-[connection signal="pressed" from="ReintentarNivelButton" to="." method="_on_ReintentarNivelButton_pressed"]
+[connection signal="pressed" from="SalirButton" to="." method="_on_SalirButton_pressed"]

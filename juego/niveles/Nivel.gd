@@ -8,12 +8,14 @@ export (String, FILE, "*.tscn") var menu_game_over = ""
 
 func _ready() -> void:
 	
-	yield(get_tree().create_timer(0.4),"timeout")
+	var guardar : GuardarCargar = GuardarCargar.new()
+	guardar.guardar_datos_juego()
 	actualizar_datos()
 
 
 func actualizar_datos() -> void:
 	
+	yield(get_tree().create_timer(0.1),"timeout")
 	DatosJuego.nivel_actual = get_tree().current_scene.filename
 	DatosJuego.num_nivel_actual = numero_nivel
 	DatosJuego.nivel_proximo = proximo_nivel

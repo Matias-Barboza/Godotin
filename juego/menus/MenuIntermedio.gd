@@ -1,6 +1,9 @@
 extends Control
 
 
+export (String, FILE, "*.tscn") var pantalla_carga = "" 
+
+
 onready var titulo = $Titulo
 onready var puntos = $Puntos
 
@@ -14,4 +17,5 @@ func _ready() -> void:
 
 func _on_SiguienteNivelButton_pressed() -> void:
 	
-	get_tree().change_scene(DatosJuego.nivel_proximo)
+	DatosJuego.nivel_actual = DatosJuego.nivel_proximo
+	get_tree().change_scene(pantalla_carga)

@@ -1653,7 +1653,7 @@ nodes/TimeScale/position = Vector2( -180, 1000 )
 nodes/TransicionSueloAire/node = SubResource( 45 )
 nodes/TransicionSueloAire/position = Vector2( 400, 1000 )
 nodes/output/position = Vector2( 1200, 1000 )
-node_connections = [ "output", 0, "MezclaDisparar", "MezclaIdleCaminar", 0, "Animation 10", "MezclaIdleCaminar", 1, "TimeScale", "MezclaSaltarCaer", 0, "Animation 11", "MezclaSaltarCaer", 1, "Animation 12", "TimeScale", 0, "Animation 9", "TransicionSueloAire", 0, "MezclaIdleCaminar", "TransicionSueloAire", 1, "MezclaSaltarCaer", "MezclaDisparar", 0, "TransicionSueloAire", "MezclaDisparar", 1, "Animation" ]
+node_connections = [ "TimeScale", 0, "Animation 9", "MezclaDisparar", 0, "TransicionSueloAire", "MezclaDisparar", 1, "Animation", "TransicionSueloAire", 0, "MezclaIdleCaminar", "TransicionSueloAire", 1, "MezclaSaltarCaer", "MezclaIdleCaminar", 0, "Animation 10", "MezclaIdleCaminar", 1, "TimeScale", "MezclaSaltarCaer", 0, "Animation 11", "MezclaSaltarCaer", 1, "Animation 12", "output", 0, "MezclaDisparar" ]
 
 [node name="Godotin" type="KinematicBody"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
@@ -1668,7 +1668,7 @@ impulso = 20.0
 fuerza_salto = 5.0
 
 [node name="Colisionador" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.2 )
 shape = SubResource( 24 )
 
 [node name="Armadura" type="Spatial" parent="."]

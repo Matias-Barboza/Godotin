@@ -76,14 +76,16 @@ corner_radius_bottom_left = 2
 [node name="MenuInicio" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 3 )
-nivel_inicial = "res://juego/niveles/NivelTest.tscn"
+nivel_inicial = "res://juego/niveles/Nivel1.tscn"
 menu_ajustes = "res://juego/menus/MenuAjustes.tscn"
 pantalla_carga = "res://juego/interfaces/PantallaCarga.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color( 0.113725, 0.133333, 0.14902, 1 )
 
 [node name="Label" type="Label" parent="."]
@@ -163,6 +165,7 @@ text = "Salir"
 stream = ExtResource( 4 )
 bus = "SFX"
 
+[connection signal="pressed" from="ContenedorPrincipal/CargarButton" to="." method="_on_CargarButton_pressed"]
 [connection signal="pressed" from="ContenedorPrincipal/NuevoButton" to="." method="_on_NuevoButton_pressed"]
 [connection signal="pressed" from="ContenedorPrincipal/OpcionesButton" to="." method="_on_OpcionesButton_pressed"]
 [connection signal="pressed" from="ContenedorPrincipal/SalirButton" to="." method="_on_SalirButton_pressed"]

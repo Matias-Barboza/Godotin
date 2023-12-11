@@ -65,7 +65,7 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "audio"
-tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/path = NodePath("SFXConsumida")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -113,7 +113,7 @@ autoplay = "girar"
 anims/consumida = SubResource( 3 )
 anims/girar = SubResource( 4 )
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="SFXConsumida" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
 bus = "SFX"
 

@@ -129,5 +129,9 @@ func movimiento_vertical() -> void:
 
 func respawn() -> void:
 	
+	$Colisionador.set_deferred("disabled",true)
 	DatosJuego.restar_vidas()
-	get_tree().reload_current_scene()
+	if(DatosJuego.vidas > 0):
+		
+		get_tree().reload_current_scene()
+		$Colisionador.set_deferred("disabled",false)

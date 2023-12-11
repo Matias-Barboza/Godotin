@@ -32,7 +32,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		)
 		
 		# Movimiento alrededor del eje y (derecha / izquierda)
-		rotation_degrees.y += event.relative.x * velocidad_mov_camara.x
+		rotation_degrees.y += -event.relative.x * velocidad_mov_camara.x
 		rotation_degrees.y = wrapf(
 			rotation_degrees.y,
 			rango_rotacion_camara_y.x,
